@@ -1,0 +1,257 @@
+@model List<IS_SISTEMA.models.Students>
+<!DOCTYPE html>
+<html>
+<head>
+    <h1>VIKO EIF</h1>
+<style>
+h1{
+    text-align: center;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #e7e7e7;
+  background-color: #f3f3f3;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: #666;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+li a.active {
+  color: white;
+  background-color: #04AA6D;
+}
+table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+         table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .modal {
+            display: none; 
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 50px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 50%;
+            max-width: 300px; 
+            position: relative; 
+        }
+
+        .close {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            color: #aaa;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+        }
+
+        /* Form styles */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        form div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            width: 100%;
+        }
+
+        label {
+            flex: 0 0 80px;
+            text-align: right;
+            margin-right: 10px;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 4px;
+            max-width: calc(100% - 80px);
+        }
+
+        button[type="submit"] {
+            padding: 6px 12px;
+            font-size: 14px;
+        }
+</style>
+</head>
+<ul>
+  <li><a href="/">Home</a></li>
+  <li><a href="/groups">Groups</a></li>
+  <li><a href="/students"class="active">Students</a></li>
+  <li><a href="/lecturers">Lecturers</a></li>
+  <li><a href="/subjects">Subjects</a></li>
+</ul>
+@if (Model == null || !Model.Any())
+    {
+        <p style="text-align: center;">No students found.</p>
+    }
+    else
+    {
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Last name</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var students in Model)
+                {
+                    <tr>
+                        <td>@students.id</td>
+                        <td>@students.Name</td>
+                        <td>@students.Lastname</td>
+                        <td>@students.Phone</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    <button id="openModalBtn">Add New Student</button>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form method="post" action="/api/newstudents">
+                <div>
+                    <label for="Name">Name:</label>
+                    <input type="text" id="Name" name="Name" required>
+                </div>
+                
+                <div>
+                    <label for="Lastname">Last name:</label>
+                    <input type="text" id="Lastname" name="Lastname" required>
+                </div>
+                
+                <div>
+                    <label for="Phone">Phone:</label>
+                    <input type="text" id="Phone" name="Phone" required>
+                </div>
+                <button type="submit">Add Student</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        var modal = document.getElementById("myModal");
+        var btn = document.getElementById("openModalBtn");
+        var span = document.getElementsByClassName("close")[0];
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    
+    <button id="deleteModalBtn">Delete Student</button>
+<div id="deleteModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <form method="post" action="/api/delstudents">
+            <div>
+                <label for="StudentsId">Student ID:</label>
+                <input type="text" id="StudentsId" name="id" required>
+            </div>
+
+            <button type="submit" onclick="return confirm('Are you sure you want to delete this student?');">Delete Student</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    var deleteModal = document.getElementById("deleteModal");
+    var deleteBtn = document.getElementById("deleteModalBtn");
+    var closeBtn = document.getElementsByClassName("close")[0];
+
+    deleteBtn.onclick = function() {
+        deleteModal.style.display = "block";
+    }
+
+    closeBtn.onclick = function() {
+        deleteModal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == deleteModal) {
+            deleteModal.style.display = "none";
+        }
+    }
+</script>
+<body>
+</body>
+</html>
+
+

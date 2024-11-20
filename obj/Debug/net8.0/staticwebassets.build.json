@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "2cvp7dbPT95oUvUsJgD2HNRKIB5wHzP9EuzNyNbnqBI=",
+  "Source": "Kazkas",
+  "BasePath": "_content/Kazkas",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Kazkas\\wwwroot",
+      "Source": "Kazkas",
+      "ContentRoot": "C:\\Users\\Paulius\\OneDrive\\Desktop\\Kazkas\\Kazkas\\wwwroot\\",
+      "BasePath": "_content/Kazkas",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}

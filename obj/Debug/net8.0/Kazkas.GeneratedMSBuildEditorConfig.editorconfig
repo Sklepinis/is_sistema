@@ -1,0 +1,47 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Kazkas
+build_property.RootNamespace = Kazkas
+build_property.ProjectDir = C:\Users\Paulius\OneDrive\Desktop\Kazkas\Kazkas\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Paulius\OneDrive\Desktop\Kazkas\Kazkas
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Paulius/OneDrive/Desktop/Kazkas/Kazkas/views/groups.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZ3JvdXBzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paulius/OneDrive/Desktop/Kazkas/Kazkas/views/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcaW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paulius/OneDrive/Desktop/Kazkas/Kazkas/views/lecturerdashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcbGVjdHVyZXJkYXNoYm9hcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paulius/OneDrive/Desktop/Kazkas/Kazkas/views/lecturers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcbGVjdHVyZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paulius/OneDrive/Desktop/Kazkas/Kazkas/views/studentdashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncc3R1ZGVudGRhc2hib2FyZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paulius/OneDrive/Desktop/Kazkas/Kazkas/views/students.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncc3R1ZGVudHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paulius/OneDrive/Desktop/Kazkas/Kazkas/views/subjects.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncc3ViamVjdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
